@@ -1,0 +1,132 @@
+
+.prueba {
+  background-image: url(../../assets/images/f3.jpg);
+  background-size: 100%;
+}
+.main-logo-holder {
+  margin: 60px auto 40px;
+  text-align: center;
+}
+
+.prueba2 {
+  background-image: url(../../assets/images/f3.jpg);
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 19%;
+}
+
+.prueba3 {
+  width: 100%;
+  height: 100%;
+}
+#login-base .page-header {
+  border-bottom: none;
+}
+
+.page-header {
+  position: relative;
+}
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.main-logo {
+  padding: 20px 0;
+}
+
+
+
+html:not(.ie9) label.sr-only.separator {
+  height: 0;
+  position: fixed;
+  width: auto;
+}
+
+label.separator {
+  color: #666;
+  font-weight: 400;
+}
+
+label.separator {
+  text-align: center;
+  z-index: 1;
+  font-size: 16px;
+  margin: 0 0 15px 0;
+}
+
+.row2{
+  margin-right: 0px;
+}
+
+input[type=text] {
+  padding-right: 30px;
+}
+
+.login .remember-forgot {
+  margin: 20px 0;
+}
+
+
+.login .remember-forgot .checkbox {
+  margin: 0;
+}
+
+.remember-forgot .checkbox, .remember-forgot .pull-left, .remember-forgot .pull-right {
+  margin-top: 0;
+}
+
+.pull-left {
+  float: left;
+}
+
+.remember-forgot {
+  padding: 0 0 0;
+}
+
+.login .remember-forgot {
+  margin: 20px 0;
+}
+
+a {
+  color: #004270;
+}
+
+.margin {
+  margin-left: 260px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 72px;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: rgba(0,0,0,.6);
+  padding: 10px;
+}
+
+@media (min-width: 1200px)
+  .container {
+    width: 1170px;
+  }
+
+  @media (min-width: 992px)
+  .container {
+      width: 970px;
+    }
+    @media (min-width: 768px)
+      .container {
+        width: 750px;
+      }
+      .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+

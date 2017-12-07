@@ -1,0 +1,191 @@
+<div class="Bodymain" [ngClass]="{'Cambi': Bol}">
+  <div id="wrapper"  class="wrap">
+    <div class="row"></div>
+    <div class="col-xs-12 columns bodyclass">
+      <section id="top-section">
+        <div class="row">
+          <div class="col-xs-12 columns">
+            <div class="mobile-header visible-sm ShadowEffect">
+              <a href="#" class="toggle-sidemenu"><span class="Ray"></span></a>
+              <div class="logo60"> <a href="http://www.iteso.mx"><div class="overLogo"></div></a></div>
+              <div class="iteso-tab-mobile itm-none">
+                <ul class="list-inline list-unstyled listTop">
+                  <li><a href="#"><img src="../../assets/images/close-icon-st.png"></a></li>
+                  <li><a href="#"><img src="../../assets/images/switch-icon-st.png"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="firstContent">
+        <div class="seContent">
+          <div class="Cont1" style="height: 223px; max-height: 2000px;">
+            <div class="Cont2 Cont1" style="height: -webkit-fill-available;">
+              <header class="headerP">
+              <span>
+                <span style="font-size: 25px;font-weight: 600;">Historia académica</span>
+              </span>
+              </header>
+              <div class="divone">
+                <div>
+                  <div>
+                    <div class="OnePanel">
+                      <div class="ResDiv">
+                        <div class="Primero">
+                          <div class="Segundo">
+                            <label style="font-size: 18px;" class="Plan">Plan de estudio:</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="TwoPanel">
+                      <div class="TwoDiv" style="height: 61px;">
+                        <select class="SelectD" [(ngModel)]="Ca" [ngModelOptions]="{standalone: true}">
+                          <option>Selecciona</option>
+                          <option value='S'>IES2017 - INGENIERIA EN EMPRESAS DE SERVICIO - ACTIVO</option>
+                          <option value='N'>1LI - PROGRAMA DE CERTIFICACIONES DE INGLES - BAJA</option>
+                        </select>
+                        <br>
+                        <br>
+                        <button class="BotonAzul" (click)="Cambio();"><span class="ui-button-text ui-c">Consultar</span></button>
+                        <div class="EmptyBox20"></div>
+                        <div class="EmptyBox20"></div>
+                        <div *ngIf="Bol === true" class="TreePanel">
+                          <div class="HeaderT">
+                            Asignaturas
+                          </div>
+                          <div class="Table1">
+                            <table role="grid" class="table table-striped table-bordered" style="text-align: center;">
+                              <thead class="thead-inverse">
+                              <tr role="row">
+                                <th class="ThTable" role="columnheader" tabindex="0">
+                                  <span class="ui-column-title">Nombre</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 20%;">
+                                  <span class="ui-column-title">Area plan estudios</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 15%;">
+                                  <span class="ui-column-title">Periodo escolar</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 95px;">
+                                  <span class="ui-column-title">Calificación obtenida</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 15%;">
+                                  <span class="ui-column-title">Tipo evaluación</span>
+                                </th>
+                              </tr>
+                              </thead>
+                              <tfoot>
+                              <tr>
+                                <td class="foooT" colspan="5"> Promedio:  7.9</td>
+                              </tr>
+                              </tfoot>
+                              <tbody class="tableCont .table-striped">
+                              <tr *ngFor=" let thin of Tables">
+                                <td role="gridcell"><span>{{thin.Nombre}}</span></td>
+                                <td><span>{{thin.Area}}</span></td>
+                                <td><span>{{thin.Periodos}}</span></td>
+                                <td><span>{{thin.Calificacion}}</span></td>
+                                <td><span>{{thin.Tipo}}</span></td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="EmptyBox30"></div>
+                          <div class="HeaderT">
+                            Créditos por área
+                          </div>
+                          <div class="Table1">
+                            <table role="grid" class="table table-striped table-bordered" style="text-align: center;">
+                              <thead class="thead-inverse">
+                              <tr role="row">
+                                <th class="ThTable" role="columnheader" tabindex="0">
+                                  <span class="ui-column-title">Area</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 20%;">
+                                  <span class="ui-column-title">Requeridos</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 15%;">
+                                  <span class="ui-column-title">Aprobados</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 95px;">
+                                  <span class="ui-column-title">Inscritos</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 15%;">
+                                  <span class="ui-column-title">Por Cursar</span>
+                                </th>
+                              </tr>
+                              </thead>
+                              <tfoot>
+                              <tr>
+                                <td class="foooT" colspan="5">Porcentaje de créditos aprobados: 36.49</td>
+                              </tr>
+                              </tfoot>
+                              <tbody class="tableCont .table-striped">
+                              <tr *ngFor=" let thin of Asignaturas">
+                                <td role="gridcell"><span>{{thin.Area}}</span></td>
+                                <td><span>{{thin.Requeridos}}</span></td>
+                                <td><span>{{thin.Aprobados}}</span></td>
+                                <td><span>{{thin.Inscritos}}</span></td>
+                                <td><span>{{thin.Por}}</span></td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div *ngIf="Bol === false" class="TreePanel">
+                          <div class="HeaderT">
+                            Asignaturas
+                          </div>
+                          <div class="Table1">
+                            <table role="grid" class="table table-striped table-bordered" style="text-align: center;">
+                              <thead class="thead-inverse">
+                              <tr role="row">
+                                <th class="ThTable" role="columnheader" tabindex="0">
+                                  <span class="ui-column-title">Nombre</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 20%;">
+                                  <span class="ui-column-title">Area plan estudios</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 15%;">
+                                  <span class="ui-column-title">Periodo escolar</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 95px;">
+                                  <span class="ui-column-title">Calificación obtenida</span>
+                                </th>
+                                <th class="ThTable" role="columnheader" tabindex="0" style="width: 15%;">
+                                  <span class="ui-column-title">Tipo evaluación</span>
+                                </th>
+                              </tr>
+                              </thead>
+                              <tfoot>
+                              <tr>
+                                <td class="foooT" colspan="5"> Promedio:  6.0</td>
+                              </tr>
+                              </tfoot>
+                              <tbody class="tableCont .table-striped">
+                              <tr >
+                                <td role="gridcell" style="padding-top: 3%;"><span>INGLES 3</span></td>
+                                <td style="padding-top: 3%;"><span>PD - Por definir</span></td>
+                                <td style="padding-top: 3%;"><span>DEL Ene-Mzo 2015</span></td>
+                                <td style="padding-top: 3%;"><span>6</span></td>
+                                <td style="padding-top: 3%;"><span>Examen De Ubicación</span></td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 columns" style="text-align: center"><a href="https://datospersonales.iteso.mx/" target="_blank">Aviso de privacidad Términos y Condiciones</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

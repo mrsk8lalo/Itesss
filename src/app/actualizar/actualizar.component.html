@@ -1,0 +1,236 @@
+<div class="Bodymain">
+<div id="wrapper"  class="wrap">
+  <div class="row"></div>
+  <div class="col-xs-12 columns bodyclass">
+    <section id="top-section">
+      <div class="row">
+        <div class="col-xs-12 columns">
+          <div class="mobile-header visible-sm ShadowEffect">
+            <a href="#" class="toggle-sidemenu"><span class="Ray"></span></a>
+            <div class="logo60"> <a href="http://www.iteso.mx"><div class="overLogo"></div></a></div>
+            <div class="iteso-tab-mobile itm-none">
+              <ul class="list-inline list-unstyled listTop">
+                <li><a href="#"><img src="../../assets/images/close-icon-st.png"></a></li>
+                <li><a href="#"><img src="../../assets/images/switch-icon-st.png"></a></li>
+                <li><a href="#"><img src="../../assets/images/notificaciones_blanco24.png"></a></li>
+                <li><a href="#"><img src="../../assets/images/user-icon-w.png"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="ContentMain">
+      <div class="SecondCont">
+        <div class="LayFist">
+          <div class="Container1">
+            <div class="Container2">
+              <div class="Div3">
+                <div>
+                  <div class="Div4">
+                    <div>
+                      <div>
+                        <img id="A3159:imgentrada" src="../../assets/images/entrada_iteso.jpg?pfdrid_c=true" alt="" class="Wid100">
+                        <span class="HeaderS">Actualiza tus datos</span>
+                        <div class="EmptyBox5"></div>
+                        <div class="SecondDiv">
+                          <table class="TableDiv" role="grid">
+                            <tbody>
+                            <tr role="row">
+                              <td  role="gridcell" class="Icon1"><img src="../../assets/images/11.png"></td>
+                              <td role="gridcell">
+                                <label *ngIf="Phone == false"  class="principalColor">{{Telefono}}</label>
+                                <br *ngIf="Phone == false" >
+                                <label *ngIf="Phone == false"  class="secondColor">{{Clase}} {{Tipo}},{{Pais}}</label>
+                                <form *ngIf="Phone == true" >
+                                  <div class="material-input-field">
+                                    <label class="LabelInputs">País</label>
+                                    <div class="DivInputs1">
+                                      <select class="InputsLabel2" style="width: 100%" [(ngModel)]="Pais" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let pais of Paises" value="{{pais}}">{{pais}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="material-input-field" >
+                                    <label class="LabelInputs">Telefono</label>
+                                    <br>
+                                    <div class="DivInputs1">
+                                      <input type="text"  class="InputsLabel2" style="width:45%; margin-right: 84px"  [(ngModel)]="Telefono" [ngModelOptions]="{standalone: true}" maxlength="10">
+                                      <input type="text" class="InputsLabel2"style="width:45%"  placeholder="EXTENSIÓN" [(ngModel)]="Extencion" [ngModelOptions]="{standalone: true}" maxlength="4">
+                                    </div>
+                                  </div>
+                                  <div class="material-input-field">
+                                    <div style="width: 100%">
+                                      <label style="margin-right: 50%;" class="LabelInputs">Clase</label>
+                                      <label class="LabelInputs">Tipo</label>
+                                      <br>
+                                      <div class="DivInputs1">
+                                        <select class="InputsLabel2" style="width: 100%" style="width:45%;margin-right: 9%;" [(ngModel)]="Clase" [ngModelOptions]="{standalone: true}">
+                                          <option *ngFor="let cla of Clases" value="{{cla}}">{{cla}}</option>
+                                        </select>
+                                        <select class="InputsLabel2" style="width: 100%" style="width:45%" [(ngModel)]="Tipo" [ngModelOptions]="{standalone: true}">
+                                          <option *ngFor="let tip of Tipos" value="{{tip}}">{{tip}}</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="EmptyBox30"></div>
+                                  <div style="width: 100%; float: right;text-align: right;" >
+                                    <input class="Butin" type="submit" (click)="Guardar()" value="Guardar">
+                                    <input class="Butin" type="submit" (click)="Cancelar()" value="Cancelar">
+                                  </div>
+                                </form>
+                              </td>
+                              <td *ngIf="Phone == false"role="gridcell" class="ButonTd">
+                                <button class="ButonF" (click)="ChangeB();">
+                                <img src="../../assets/images/12.png">
+                                </button>
+                              </td>
+                            </tr>
+                            <tr role="row">
+                              <td class="Space1"></td>
+                              <td class="Space2"><div class="Separator"></div></td>
+                            </tr>
+                            <tr role="row">
+                              <td role="gridcell" class="SecondGrid"><img src="../../assets/images/14.png"></td>
+                              <td  role="gridcell">
+                                <label  class="principalColor">es704428@iteso.mx</label>
+                                <br >
+                                <label class="secondColor">Institucional</label>
+                                <div *ngIf="Email == false" class="EmptyBox10"></div>
+                                <form *ngIf="Email == true">
+                                  <div class="material-input-field">
+                                    <label class="LabelInputs">Correo alterno al del ITESO*</label>
+                                    <div class="DivInputs1">
+                                      <input class="InputsLabel2" type="text" style="width:100%" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                  </div>
+                                  <div class="EmptyBox30"></div>
+                                  <div style="width: 100%; float: right;text-align: right;" >
+                                    <input class="Butin" type="submit" (click)="GuardarE()" value="Guardar">
+                                    <input class="Butin" type="submit" (click)="CancelarE()" value="Cancelar">
+                                  </div>
+                                </form>
+                                <label *ngIf="Email == false" class="principalColor">{{email}} </label>
+                                <br *ngIf="Email == false" >
+                                <label *ngIf="Email == false" class="secondColor">Alterno</label>
+                              </td>
+                              <td *ngIf="Email == false" role="gridcell" class="ButonTd">
+                                <button class="ButonF" (click)="ChangeE();">
+                                  <img src="../../assets/images/12.png">
+                                </button>
+                              </td>
+                            </tr>
+                            <tr role="row">
+                              <td class="Space1"></td>
+                              <td class="Space2"><div class="Separator"></div></td>
+                            </tr>
+                            <tr role="row">
+                              <td role="gridcell" class="Icon1"><img src="../../assets/images/15.png"></td>
+                              <td role="gridcell">
+                                <div *ngIf="Datos == false">
+                                  <label class="principalColor">{{Calle}} #{{NE}} {{NI}},{{Colonia}}, {{CodigoP}}, {{Ciudad}}, {{Estado}}, {{Lugar_Residencia}} </label>
+                                  <br>
+                                  <label class="secondColor">{{Tipo_Domi}}</label>
+                                </div>
+                                <form *ngIf="Datos == true">
+                                  <div class="material-input-field">
+                                    <label class="LabelInputs">Lugar de residencia*</label>
+                                    <div class="DivInputs1">
+                                      <select class="InputsLabel2" style="width: 100%" [(ngModel)]="Lugar_Residencia" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let lugar of Paises" value="{{lugar}}">{{lugar}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="material-input-field">
+                                    <label class="LabelInputs" style="margin-right: 44%;">Nombre de la calle*</label>
+                                    <label class="LabelInputs">Número exterior*</label>
+                                    <div class="DivInputs1">
+                                      <input class="InputsLabel2" type="text" style="width:50%; margin-right: 5%;" [(ngModel)]="Calle" [ngModelOptions]="{standalone: true}">
+                                      <input class="InputsLabel2" type="number" style="width:15%;  margin-right: 5%;" [(ngModel)]="NE" [ngModelOptions]="{standalone: true}">
+                                      <input class="InputsLabel2" placeholder="Interior" type="number" style="width:15%" [(ngModel)]="NI" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                  </div>
+                                  <div  class="material-input-field">
+                                    <label class="LabelInputs" style="margin-right: 70%;">Colonia</label>
+                                    <label class="LabelInputs">Código postal*</label>
+                                    <div class="DivInputs1">
+                                      <input class="InputsLabel2" type="text" style="width:70%; margin-right: 5%;" [(ngModel)]="Colonia" [ngModelOptions]="{standalone: true}">
+                                      <input class="InputsLabel2" type="number" style="width:15%" [(ngModel)]="CodigoP" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                  </div>
+                                  <div class="material-input-field">
+                                    <label class="LabelInputs" style="margin-right:47%;">Estado</label>
+                                    <label class="LabelInputs">Ciudad</label>
+                                    <div class="DivInputs1">
+                                      <input class="InputsLabel2" type="text" style="width:41%;margin-right: 10%;" [(ngModel)]="Estado" [ngModelOptions]="{standalone: true}">
+                                      <select class="InputsLabel2" style="width:45%" [(ngModel)]="Ciudad" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let lugar of Ciudades" value="{{lugar}}">{{lugar}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="material-input-field">
+                                    <label class="LabelInputs" style="margin-right:41%;">Tipo de domicilio</label>
+                                    <label class="LabelInputs">Tipo de calle</label>
+                                    <div class="DivInputs1">
+                                      <select class="InputsLabel2" style="width:45%;margin-right: 6%;" [(ngModel)]="Tipo_Domi" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let lugar of Tipo_Domicios" value="{{lugar}}">{{lugar}}</option>
+                                      </select>
+                                      <select class="InputsLabel2" style="width:45%" [(ngModel)]="Tipo_Calle" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let lugar of Tipo_Calles" value="{{lugar}}">{{lugar}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="material-input-field">
+                                    <label class="LabelInputs" style="margin-left:52%;">Nombre de Coto/Edificio</label>
+                                    <div class="DivInputs1">
+                                      <input placeholder="Referencia" class="InputsLabel2" type="text" style="width:45%;    margin-right: 6%;" [(ngModel)]="Referencia" [ngModelOptions]="{standalone: true}">
+                                      <input placeholder="COTO" class="InputsLabel2" type="text" style="width:45%" [(ngModel)]="Edificio" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                  </div>
+                                  <div class="EmptyBox30"></div>
+                                  <div style="width: 100%; float: right;text-align: right;" >
+                                    <input class="Butin" type="submit" (click)="GuardarD()" value="Guardar">
+                                    <input class="Butin" type="submit" (click)="CancelarD()" value="Cancelar">
+                                  </div>
+                                </form>
+                              </td>
+                              <td *ngIf="Datos == false"role="gridcell" class="ButonTd">
+                                <button class="ButonF" (click)="ChangeD();">
+                                  <img src="../../assets/images/12.png">
+                                </button>
+                              </td>
+                            </tr>
+                            <tr role="row">
+                              <td class="Space1"></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                          <div class="Separator"></div>
+                          <div class="EmptyBox20"></div>
+                          <div class="FinalDiv">
+                            He verificado mis datos de localización y confirmo que la información se encuentra actualizada.
+                            <div class="EmptyBox10"></div>
+                            <button type="submit" class="imgBut" (click)="Con();"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <footer id="footer" role="contentinfo">
+    <div class="row cr">
+      <div class="col-xs-12 columns" style="text-align: center;">
+        <a href="https://datospersonales.iteso.mx/" target="_blank">Aviso de privacidad Términos y Condiciones</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</div>

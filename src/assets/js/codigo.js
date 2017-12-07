@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $('#show').mousedown(function(){
+        $('#pass').removeAttr('type');
+        $('#show').addClass('').removeClass('');
+    });
+    $('#show').mouseup(function(){
+        $('#pass').attr('type','password');
+        $('#show').addClass('').removeClass('');
+    });
+});
